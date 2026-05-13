@@ -157,20 +157,4 @@ Infrastructure should be:
 
 Project currently under active development.
 
-# Screenshots
 
-## Nextcloud
-
-![Nextcloud](screenshots/next.png)
-
----
-
-## Vaultwarden
-
-![Vaultwarden](screenshots/vault.png)
-
----
-
-## WireGuard
-
-![WireGuard](screenshots/wire.png)
