@@ -1,0 +1,9 @@
+.env
+backups/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.tar
+*.gz
+*.zip
