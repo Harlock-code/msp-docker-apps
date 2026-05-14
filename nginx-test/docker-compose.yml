@@ -1,0 +1,8 @@
+services:
+  nginx-test:
+    image: nginx:latest
+    container_name: nginx-test
+    restart: unless-stopped
+
+    ports:
+      - "8088:80"
