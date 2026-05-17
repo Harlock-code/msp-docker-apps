@@ -1,0 +1,27 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - /opt/data/homepage/config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    environment:
+      - TZ=Europe/Madrid
+      - HOMEPAGE_ALLOWED_HOSTS=home.cliente.lab.local,homepage,localhost,192.168.56.50
+
+    networks:
+      - proxy_net
+      - monitoring_net
+
+networks:
+  proxy_net:
+    external: true
+
+  monitoring_net:
+    external: true
