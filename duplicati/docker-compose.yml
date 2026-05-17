@@ -10,7 +10,7 @@ services:
       - TZ=Europe/Madrid
       - SETTINGS_ENCRYPTION_KEY=Template.47
       - DUPLICATI__WEBSERVICE_PASSWORD=Template.47
-      - DUPLICATI__WEBSERVICE_ALLOWED_HOSTNAMES=backup.cliente.lab.local,duplicati,localhost,192.168.56.50
+      - DUPLICATI__WEBSERVICE_ALLOWED_HOSTNAMES=*
 
     ports:
       - "8200:8200"
