@@ -13,7 +13,7 @@ services:
 
     environment:
       - TZ=Europe/Madrid
-      - HOMEPAGE_ALLOWED_HOSTS=home.cliente.lab.local,homepage,localhost,192.168.56.50
+      - HOMEPAGE_ALLOWED_HOSTS=home.cliente1.lab.local,homepage,localhost
 
     networks:
       - proxy_net
