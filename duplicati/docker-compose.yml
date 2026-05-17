@@ -1,0 +1,29 @@
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - SETTINGS_ENCRYPTION_KEY=Template.47
+      - DUPLICATI__WEBSERVICE_PASSWORD=Template.47
+      - DUPLICATI__WEBSERVICE_ALLOWED_HOSTNAMES=backup.cliente.lab.local,duplicati,localhost,192.168.56.50
+
+    ports:
+      - "8200:8200"
+
+    volumes:
+      - /opt/data/duplicati/config:/config
+      - /opt/backups:/backups
+      - /opt/stacks:/source/stacks:ro
+      - /opt/data:/source/data:ro
+
+    networks:
+      - proxy_net
+
+networks:
+  proxy_net:
+    external: true
